@@ -155,30 +155,28 @@ const MobileWarning: React.FC<MobileWarningProps> = ({
   }
 
   return (
-    <div
-      className={`fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 ${overlayClassName || ''} ${className || ''}`}
-    >
-      <div
-        className={`bg-white rounded-lg p-8 max-w-md mx-4 text-center shadow-2xl ${modalClassName || ''}`}
-      >
+    <div className={`fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm ${overlayClassName || ''} ${className || ''}`}>
+      <div className={`bg-white rounded-lg p-8 max-w-md mx-4 text-center shadow-2xl ${modalClassName || ''}`}>
         <div className="mb-6">
-          <div className="w-16 h-16 mx-auto mb-4 bg-red-100 rounded-full flex items-center justify-center">
+          <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-red-50 to-orange-50 rounded-full flex items-center justify-center shadow-lg ring-4 ring-red-100">
             <svg
-              className="w-8 h-8 text-red-600"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+              className="w-10 h-10 text-red-500"
+              fill="currentColor"
+              viewBox="0 0 20 20"
             >
               <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"
+                fillRule="evenodd"
+                d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                clipRule="evenodd"
               />
             </svg>
           </div>
-          <h2 className="text-xl font-bold text-gray-800 mb-2">{finalTitle}</h2>
-          <p className="text-gray-600 leading-relaxed whitespace-pre-line">{finalMessage}</p>
+          <h2 className="text-xl font-bold text-gray-800 mb-2">
+            {finalTitle}
+          </h2>
+          <p className="text-gray-600 leading-relaxed whitespace-pre-line">
+            {finalMessage}
+          </p>
         </div>
 
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">

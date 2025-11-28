@@ -200,15 +200,6 @@ function App() {
 }
 ```
 
-## Changelog
-
-### 1.0.1
-- Fixed React externalization issue that caused `ReactCurrentDispatcher` error
-- Improved build configuration to properly externalize React and JSX runtime
-
-### 1.0.0
-- Initial release
-
 ## License
 
 MIT

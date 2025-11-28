@@ -200,15 +200,6 @@ function App() {
 }
 ```
 
-## 변경 이력
-
-### 1.0.1
-- `ReactCurrentDispatcher` 오류를 일으키던 React externalization 문제 수정
-- React 및 JSX 런타임을 올바르게 외부화하도록 빌드 설정 개선
-
-### 1.0.0
-- 초기 릴리스
-
 ## 라이선스
 
 MIT

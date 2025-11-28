@@ -1,6 +1,6 @@
 {
   "name": "react-mobile-warning",
-  "version": "1.0.1",
+  "version": "1.0.7",
   "description": "A React component that displays a warning modal when accessed from mobile devices",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -43,4 +43,3 @@
     "vite-plugin-dts": "^3.0.0"
   }
 }
-
