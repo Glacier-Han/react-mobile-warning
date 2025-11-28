@@ -43,6 +43,21 @@ function App() {
 }
 ```
 
+### Named Export 사용
+
+```tsx
+import { MobileWarning } from 'react-mobile-warning';
+
+function App() {
+  return (
+    <>
+      <MobileWarning />
+      {/* 앱 콘텐츠 */}
+    </>
+  );
+}
+```
+
 ### 커스텀 설정
 
 ```tsx
@@ -157,13 +172,42 @@ function App() {
 ## 요구사항
 
 - React 16.8.0 이상
-- Tailwind CSS (스타일링용)
+- React DOM 16.8.0 이상
+- Tailwind CSS (스타일링용) - 커스텀 스타일 사용 시 선택사항
 
 ## 스타일링
 
 이 컴포넌트는 Tailwind CSS 클래스를 사용합니다. 프로젝트에 Tailwind CSS가 설정되어 있는지 확인하세요.
 
 Tailwind CSS를 사용하지 않는 경우, `className`, `overlayClassName`, `modalClassName` props를 사용하여 스타일을 덮어쓸 수 있습니다.
+
+### Tailwind CSS 없이 사용하기
+
+Tailwind CSS를 사용하지 않는 경우, 커스텀 스타일을 제공할 수 있습니다:
+
+```tsx
+import MobileWarning from 'react-mobile-warning';
+import './custom-styles.css';
+
+function App() {
+  return (
+    <MobileWarning
+      className="custom-overlay"
+      overlayClassName="custom-overlay-bg"
+      modalClassName="custom-modal"
+    />
+  );
+}
+```
+
+## 변경 이력
+
+### 1.0.1
+- `ReactCurrentDispatcher` 오류를 일으키던 React externalization 문제 수정
+- React 및 JSX 런타임을 올바르게 외부화하도록 빌드 설정 개선
+
+### 1.0.0
+- 초기 릴리스
 
 ## 라이선스
 

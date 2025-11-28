@@ -43,6 +43,21 @@ function App() {
 }
 ```
 
+### Using Named Export
+
+```tsx
+import { MobileWarning } from 'react-mobile-warning';
+
+function App() {
+  return (
+    <>
+      <MobileWarning />
+      {/* Your app content */}
+    </>
+  );
+}
+```
+
 ### Custom Configuration
 
 ```tsx
@@ -157,13 +172,42 @@ function App() {
 ## Requirements
 
 - React 16.8.0 or higher
-- Tailwind CSS (for styling)
+- React DOM 16.8.0 or higher
+- Tailwind CSS (for styling) - Optional if using custom styles
 
 ## Styling
 
 This component uses Tailwind CSS classes. Make sure your project has Tailwind CSS configured.
 
 If you're not using Tailwind CSS, you can override the styles using the `className`, `overlayClassName`, and `modalClassName` props.
+
+### Without Tailwind CSS
+
+If you don't use Tailwind CSS, you can provide your own styles:
+
+```tsx
+import MobileWarning from 'react-mobile-warning';
+import './custom-styles.css';
+
+function App() {
+  return (
+    <MobileWarning
+      className="custom-overlay"
+      overlayClassName="custom-overlay-bg"
+      modalClassName="custom-modal"
+    />
+  );
+}
+```
+
+## Changelog
+
+### 1.0.1
+- Fixed React externalization issue that caused `ReactCurrentDispatcher` error
+- Improved build configuration to properly externalize React and JSX runtime
+
+### 1.0.0
+- Initial release
 
 ## License
 

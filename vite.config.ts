@@ -5,12 +5,15 @@ import dts from 'vite-plugin-dts';
 
 export default defineConfig({
   plugins: [
-    react(),
+    react({
+      jsxRuntime: 'automatic',
+    }),
     dts({
       insertTypesEntry: true,
     }),
   ],
   build: {
+    minify: false,
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'ReactMobileWarning',
@@ -18,11 +21,15 @@ export default defineConfig({
       fileName: (format) => `index.${format === 'es' ? 'esm' : format}.js`,
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      external: (id) => {
+        // Externalize react, react-dom, and all their subpaths
+        return /^react($|\/)/.test(id) || /^react-dom($|\/)/.test(id);
+      },
       output: {
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
+          'react/jsx-runtime': 'react/jsx-runtime',
         },
       },
     },
